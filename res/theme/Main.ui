@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Form" name="Main" cloudDestinationProperty="Main" uiid="Backround" layout="BorderLayout" borderLayoutAbsoluteCenter="false" title="Phone Contacts" >
+  <component type="Container" name="contactsContainer" cloudDestinationProperty="contactsContainer" layout="BoxLayout" boxLayoutAxis="Y" >
+    <layoutConstraint value="Center" />
+    <component type="MultiList" name="MultiList" cloudDestinationProperty="MultiList" >
+      <mapItems>
+        <stringItem key="displayName" value="Entry 1" />
+        <stringItem key="phone" value="more..." />
+      </mapItems>
+      <mapItems>
+        <stringItem key="displayName" value="Entry 2" />
+        <stringItem key="phone" value="more..." />
+      </mapItems>
+      <mapItems>
+        <stringItem key="displayName" value="Entry 3" />
+        <stringItem key="phone" value="more..." />
+      </mapItems>
+      <custom name="name1" type="java.lang.String" value="displayName" />
+      <custom name="name2" type="java.lang.String" value="phone" />
+    </component>
+  </component>
+</component>

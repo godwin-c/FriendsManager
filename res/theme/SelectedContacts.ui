@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Form" name="SelectedContacts" cloudDestinationProperty="SelectedContacts" uiid="Backround" layout="BorderLayout" borderLayoutAbsoluteCenter="false" title="My Friends" >
+  <component type="Container" name="Container" cloudDestinationProperty="Container" layout="BoxLayout" boxLayoutAxis="Y" >
+    <layoutConstraint value="Center" />
+    <component type="MultiList" name="storedContactsMultiList" cloudDestinationProperty="storedContactsMultiList" enabled="true" >
+      <mapItems>
+        <stringItem key="displayName" value="Entry 1" />
+      </mapItems>
+      <mapItems>
+        <stringItem key="displayName" value="Entry 2" />
+      </mapItems>
+      <mapItems>
+        <stringItem key="displayName" value="Entry 3" />
+      </mapItems>
+      <custom name="name1" type="java.lang.String" value="displayName" />
+    </component>
+  </component>
+</component>

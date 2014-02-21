@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Container" name="ContactsRenderer" cloudDestinationProperty="ContactsRenderer" layout="BorderLayout" borderLayoutAbsoluteCenter="false" >
+  <component type="MultiButton" name="contactMultiButton" cloudDestinationProperty="contactMultiButton" >
+    <layoutConstraint value="Center" />
+  </component>
+</component>

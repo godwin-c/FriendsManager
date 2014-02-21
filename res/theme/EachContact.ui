@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Form" name="EachContact" cloudDestinationProperty="EachContact" uiid="Backround" layout="BorderLayout" borderLayoutAbsoluteCenter="false" title="Agada Godwin" >
+  <component type="Container" name="Container" cloudDestinationProperty="Container" layout="BorderLayout" borderLayoutAbsoluteCenter="false" >
+    <layoutConstraint value="North" />
+    <component type="Container" name="Container3" cloudDestinationProperty="Container3" layout="FlowLayout" flowLayoutFillRows="false" flowLayoutAlign="4" flowLayoutValign="4" >
+      <layoutConstraint value="West" />
+      <component type="Button" name="phoneIcon" cloudDestinationProperty="phoneIcon" uiid="Label" text="" >
+      </component>
+    </component>
+    <component type="Container" name="Container2" cloudDestinationProperty="Container2" layout="BoxLayout" boxLayoutAxis="Y" >
+      <layoutConstraint value="Center" />
+      <component type="Label" name="Label" cloudDestinationProperty="Label" uiid="infoLabel" text="Mobile" >
+      </component>
+      <component type="Label" name="phoneNumberLabel" cloudDestinationProperty="phoneNumberLabel" text="+2348034453370" >
+      </component>
+    </component>
+  </component>
+  <component type="Container" name="Container1" cloudDestinationProperty="Container1" layout="BorderLayout" borderLayoutAbsoluteCenter="false" >
+    <layoutConstraint value="Center" />
+    <component type="Container" name="Container5" cloudDestinationProperty="Container5" layout="BoxLayout" boxLayoutAxis="Y" >
+      <layoutConstraint value="Center" />
+      <component type="Label" name="Label1" cloudDestinationProperty="Label1" uiid="infoLabel" text="Events" >
+      </component>
+      <component type="Container" name="Container4" cloudDestinationProperty="Container4" uiid="anodaTitle" layout="BoxLayout" boxLayoutAxis="Y" >
+        <component type="Button" name="birthdayButton" cloudDestinationProperty="birthdayButton" uiid="Separator" text="Birthday" >
+        </component>
+        <component type="Button" name="anniversaryButton" cloudDestinationProperty="anniversaryButton" uiid="Separator" text="Wedding Anniversary" >
+        </component>
+        <component type="Button" name="encounterButton" cloudDestinationProperty="encounterButton" uiid="Separator" text="First Encounter" >
+        </component>
+        <component type="Button" name="customButton" cloudDestinationProperty="customButton" uiid="Separator" text="Custom Event" >
+        </component>
+      </component>
+    </component>
+  </component>
+</component>

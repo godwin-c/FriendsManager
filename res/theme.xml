@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resource majorVersion="1" minorVersion="6" useXmlUI="false">
+    <ui name="ContactsRenderer" />
+    <ui name="EachContact" />
+    <image name="line.png"  />
+    <ui name="Main" />
+    <image name="phoneIcon.png"  />
+    <ui name="SelectedContacts" />
+    <image name="splash.png"  />
+    <ui name="SplashScreen" />
+    <theme name="Theme">
+        <val key="@includeNativeBool" value="true" />
+        <val key="Backround.bgImage" value="whiteBG.png" />
+        <val key="Backround.bgType" value="1" />
+        <val key="Label.fgColor" value="000000" />
+        <val key="Label.transparency" value="0" />
+        <gradient key="Menu.bgGradient" color1="0" color2="0" posX="0.5" posY="0.5" radius="1.0" />
+        <val key="Menu.bgType" value="0" />
+        <val key="Menu.transparency" value="0" />
+        <val key="MenuButton.bgImage" value="line.png" />
+        <val key="MenuButton.bgType" value="26" />
+        <val key="MenuButton.margin" value="0,0,0,0" />
+        <val key="MenuButton.padding" value="2,2,2,2" />
+        <val key="Separator.align" value="1" />
+        <border key="Separator.border" type="line" thickness="1" color="16777215" />
+        <val key="Separator.fgColor" value="ffffff" />
+        <font key="Separator.font" type="system" face="0" style="1" size="0" />
+        <val key="Separator.press#align" value="1" />
+        <border key="Separator.press#border" type="line" thickness="1" color="16777215" />
+        <val key="Separator.press#fgColor" value="cccccc" />
+        <font key="Separator.press#font" type="system" face="0" style="1" size="16" />
+        <val key="Separator.press#transparency" value="0" />
+        <val key="Separator.sel#align" value="1" />
+        <border key="Separator.sel#border" type="line" thickness="1" color="16777215" />
+        <val key="Separator.sel#fgColor" value="cccccc" />
+        <font key="Separator.sel#font" type="system" face="0" style="1" size="16" />
+        <val key="Separator.sel#transparency" value="0" />
+        <val key="Separator.transparency" value="0" />
+        <gradient key="SideNavigationPanel.bgGradient" color1="0" color2="0" posX="0.5" posY="0.5" radius="1.0" />
+        <val key="SideNavigationPanel.bgType" value="0" />
+        <val key="SideNavigationPanel.fgColor" value="000000" />
+        <val key="Title.align" value="4" />
+        <gradient key="Title.bgGradient" color1="0" color2="0" posX="0.5" posY="0.5" radius="1.0" />
+        <val key="Title.bgType" value="0" />
+        <val key="Title.fgColor" value="ffffff" />
+        <val key="Title.transparency" value="0" />
+        <val key="TitleArea.bgColor" value="000000" />
+        <gradient key="TitleArea.bgGradient" color1="0" color2="0" posX="0.5" posY="0.5" radius="1.0" />
+        <val key="TitleArea.bgType" value="0" />
+        <val key="TitleArea.fgColor" value="ffffff" />
+        <val key="TitleArea.transparency" value="0" />
+        <gradient key="anodaTitle.bgGradient" color1="5461130" color2="5461130" posX="0.5" posY="0.5" radius="1.0" />
+        <val key="anodaTitle.bgType" value="7" />
+        <val key="anodaTitle.fgColor" value="ffffff" />
+        <val key="infoLabel.fgColor" value="ff33ff" />
+        <font key="infoLabel.font" type="system" face="0" style="1" size="16" />
+        <val key="newForm.bgImage" value="splash.png" />
+        <val key="newForm.bgType" value="1" />
+        <val key="newTitle.align" value="4" />
+        <gradient key="newTitle.bgGradient" color1="16750848" color2="16750848" posX="0.5" posY="0.5" radius="1.0" />
+        <val key="newTitle.bgType" value="7" />
+        <border key="newTitle.border" type="line" thickness="3" color="3394560" />
+        <val key="newTitle.fgColor" value="0" />
+        <val key="newTitle.transparency" value="0" />
+        <val key="newTitleArea.align" value="4" />
+        <val key="newTitleArea.transparency" value="0" />
+    </theme>
+    <image name="whiteBG.png"  />
+</resource>
