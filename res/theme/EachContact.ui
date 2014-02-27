@@ -33,5 +33,8 @@
         </component>
       </component>
     </component>
+    <component type="Button" name="Button" cloudDestinationProperty="Button" text="Button" >
+      <layoutConstraint value="South" />
+    </component>
   </component>
 </component>

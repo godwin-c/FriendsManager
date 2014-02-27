@@ -6,6 +6,7 @@ package userclasses;
 import com.codename1.contacts.Contact;
 import com.codename1.contacts.ContactsModel;
 import com.codename1.io.Storage;
+import com.codename1.system.NativeLookup;
 import generated.StateMachineBase;
 import com.codename1.ui.*;
 import com.codename1.ui.events.*;
@@ -35,6 +36,8 @@ public class StateMachine extends StateMachineBase {
     Vector<Hashtable> storedContacts;
     boolean found;
     MyContacts myContact;
+    CalendarEvent calenderEvent;
+    //CalendarEventImpl eventImpl;
     String customEvent;
     Vector<Hashtable> events = new Vector<Hashtable>();
     private Vector<Hashtable> allEvents;
@@ -83,7 +86,7 @@ public class StateMachine extends StateMachineBase {
 
     @Override
     protected void beforeMain(Form f) {
-        //   Storage.getInstance().clearStorage();
+        //     Storage.getInstance().clearStorage();
         //conNumber= 0;
 //        Display.getInstance().scheduleBackgroundTask(new Runnable() {
 //
@@ -379,6 +382,25 @@ public class StateMachine extends StateMachineBase {
                     storedContacts.removeElementAt(Integer.parseInt(position));
                     storedContacts.add(Integer.parseInt(position), h);
                     Storage.getInstance().writeObject("RMcontacts", storedContacts);
+                    try {
+                        final CalendarEvent ntc = (CalendarEvent) NativeLookup.create(CalendarEvent.class);
+                        if (ntc != null && ntc.isSupported()) {
+                            new Thread() {
+                                @Override
+                                public void run() {
+
+                                    String string = ntc.setMyReminder(ds.getCurrentYear(), ds.getCurrentMonth(), ds.getCurrentDay(), "A test Birthday", "Agada's Birthday");
+                                    //System.out.println("Id returned is +++++ "+string);
+                                    Dialog.show("Success", "An event has been created with an ID : "+string, "OK", null);
+                                }
+                            }.start();
+                        } else {
+                            Dialog.show("Native interface", "a feature not supported", "OK", null);
+                        }
+                    } catch (Exception e) {
+                        Dialog.show("Error", e.getMessage(), "OK", null);
+                    }
+
                 }
                 storedContacts = (Vector<Hashtable>) Storage.getInstance().readObject("RMcontacts");
                 myContact.setBirthday(bDay);
@@ -472,7 +494,7 @@ public class StateMachine extends StateMachineBase {
         Button btn = new Button("OK");
         btn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
-                String fcontact = ds.getCurrentDay() + " / " + ds.getCurrentMonth() + " / " + ds.getCurrentYear();
+                String fcontact = ds.getCurrentDay() + "/" + ds.getCurrentMonth() + "/" + ds.getCurrentYear();
                 System.out.println("Date : " + ds.getCurrentDay() + " / " + ds.getCurrentMonth() + " / " + ds.getCurrentYear());
                 storedContacts = (Vector<Hashtable>) Storage.getInstance().readObject("RMcontacts");
                 String position = "none";
@@ -488,7 +510,7 @@ public class StateMachine extends StateMachineBase {
                         h.put("weddingAnniversary", hashtable.get("weddingAnniversary"));
                         h.put("firstEncounter", fcontact);
                         // storedContacts.removeElementAt(i);
-                        storedContacts.add(h);
+                        //storedContacts.add(h);
                         System.out.println("The stored contCTS : " + storedContacts);
                         //  Storage.getInstance().writeObject("RMContacts", storedContacts);
                         // break;
@@ -521,7 +543,7 @@ public class StateMachine extends StateMachineBase {
 
         if (!"none".equals(myContact.getFirstEncounter())) {
             Vector<String> string = (Vector<String>) StringUtil.tokenize(myContact.getFirstEncounter(), "/");
-            ds.setCurrentDay(Integer.parseInt(string.elementAt(0)));
+            ds.setCurrentDay(Integer.parseInt(String.valueOf(string.elementAt(0))));
             ds.setCurrentMonth(Integer.parseInt(string.elementAt(1)));
             ds.setCurrentYear(Integer.parseInt(string.elementAt(2)));
         }
@@ -606,7 +628,6 @@ public class StateMachine extends StateMachineBase {
         dlg.show();
     }
 
-    @Override
     protected void beforeEventsToday(Form f) {
         //    Date date = new Date();
         //    GregorianCalendar gc = new GregorianCalendar();
@@ -621,7 +642,6 @@ public class StateMachine extends StateMachineBase {
                 btn.setUIID("Separator");
                 btn.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent evt) {
-                        
                     }
                 });
                 findContainer(f).addComponent(btn);
@@ -630,5 +650,23 @@ public class StateMachine extends StateMachineBase {
             }
         }
 
+    }
+
+    @Override
+    protected void onEachContact_ButtonAction(Component c, ActionEvent event) {
+        super.onEachContact_ButtonAction(c, event);
+        final CalendarEvent ntc = (CalendarEvent) NativeLookup.create(CalendarEvent.class);
+        if (ntc != null && ntc.isSupported()) {
+            new Thread() {
+                @Override
+                public void run() {
+
+                    ntc.executeCalendar();
+                    //ntc.setMyReminder(2014, 1, 26, "Birthday", "A custom event set from my Codename One application");
+                }
+            }.start();
+        } else {
+            Dialog.show("Native interface", "a feature not supported", "OK", null);
+        }
     }
 }

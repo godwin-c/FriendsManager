@@ -10,6 +10,7 @@ package generated;
 import com.codename1.ui.*;
 import com.codename1.ui.util.*;
 import com.codename1.ui.plaf.*;
+import java.util.Hashtable;
 import com.codename1.ui.events.*;
 
 public abstract class StateMachineBase extends UIBuilder {
@@ -36,9 +37,8 @@ public abstract class StateMachineBase extends UIBuilder {
         UIBuilder.registerCustomComponent("MultiButton", com.codename1.components.MultiButton.class);
         UIBuilder.registerCustomComponent("Form", com.codename1.ui.Form.class);
         UIBuilder.registerCustomComponent("InfiniteProgress", com.codename1.components.InfiniteProgress.class);
-        UIBuilder.registerCustomComponent("MultiList", com.codename1.ui.list.MultiList.class);
         UIBuilder.registerCustomComponent("Label", com.codename1.ui.Label.class);
-        UIBuilder.registerCustomComponent("TextField", com.codename1.ui.TextField.class);
+        UIBuilder.registerCustomComponent("MultiList", com.codename1.ui.list.MultiList.class);
         UIBuilder.registerCustomComponent("Container", com.codename1.ui.Container.class);
         if(loadTheme) {
             if(res == null) {
@@ -78,9 +78,8 @@ public abstract class StateMachineBase extends UIBuilder {
         UIBuilder.registerCustomComponent("MultiButton", com.codename1.components.MultiButton.class);
         UIBuilder.registerCustomComponent("Form", com.codename1.ui.Form.class);
         UIBuilder.registerCustomComponent("InfiniteProgress", com.codename1.components.InfiniteProgress.class);
-        UIBuilder.registerCustomComponent("MultiList", com.codename1.ui.list.MultiList.class);
         UIBuilder.registerCustomComponent("Label", com.codename1.ui.Label.class);
-        UIBuilder.registerCustomComponent("TextField", com.codename1.ui.TextField.class);
+        UIBuilder.registerCustomComponent("MultiList", com.codename1.ui.list.MultiList.class);
         UIBuilder.registerCustomComponent("Container", com.codename1.ui.Container.class);
         if(loadTheme) {
             if(res == null) {
@@ -131,6 +130,30 @@ public abstract class StateMachineBase extends UIBuilder {
         return cmp;
     }
 
+    public com.codename1.ui.Button findPhoneIcon(Component root) {
+        return (com.codename1.ui.Button)findByName("phoneIcon", root);
+    }
+
+    public com.codename1.ui.Button findPhoneIcon() {
+        com.codename1.ui.Button cmp = (com.codename1.ui.Button)findByName("phoneIcon", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.Button)findByName("phoneIcon", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.Button findAnniversaryButton(Component root) {
+        return (com.codename1.ui.Button)findByName("anniversaryButton", root);
+    }
+
+    public com.codename1.ui.Button findAnniversaryButton() {
+        com.codename1.ui.Button cmp = (com.codename1.ui.Button)findByName("anniversaryButton", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.Button)findByName("anniversaryButton", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
     public com.codename1.ui.Container findContainer3(Component root) {
         return (com.codename1.ui.Container)findByName("Container3", root);
     }
@@ -163,126 +186,6 @@ public abstract class StateMachineBase extends UIBuilder {
         com.codename1.ui.Container cmp = (com.codename1.ui.Container)findByName("Container1", Display.getInstance().getCurrent());
         if(cmp == null && aboutToShowThisContainer != null) {
             cmp = (com.codename1.ui.Container)findByName("Container1", aboutToShowThisContainer);
-        }
-        return cmp;
-    }
-
-    public com.codename1.ui.Container findContainer5(Component root) {
-        return (com.codename1.ui.Container)findByName("Container5", root);
-    }
-
-    public com.codename1.ui.Container findContainer5() {
-        com.codename1.ui.Container cmp = (com.codename1.ui.Container)findByName("Container5", Display.getInstance().getCurrent());
-        if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.Container)findByName("Container5", aboutToShowThisContainer);
-        }
-        return cmp;
-    }
-
-    public com.codename1.components.MultiButton findContactMultiButton(Component root) {
-        return (com.codename1.components.MultiButton)findByName("contactMultiButton", root);
-    }
-
-    public com.codename1.components.MultiButton findContactMultiButton() {
-        com.codename1.components.MultiButton cmp = (com.codename1.components.MultiButton)findByName("contactMultiButton", Display.getInstance().getCurrent());
-        if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.components.MultiButton)findByName("contactMultiButton", aboutToShowThisContainer);
-        }
-        return cmp;
-    }
-
-    public com.codename1.ui.Container findContactsRenderer(Component root) {
-        return (com.codename1.ui.Container)findByName("ContactsRenderer", root);
-    }
-
-    public com.codename1.ui.Container findContactsRenderer() {
-        com.codename1.ui.Container cmp = (com.codename1.ui.Container)findByName("ContactsRenderer", Display.getInstance().getCurrent());
-        if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.Container)findByName("ContactsRenderer", aboutToShowThisContainer);
-        }
-        return cmp;
-    }
-
-    public com.codename1.ui.Button findButton(Component root) {
-        return (com.codename1.ui.Button)findByName("Button", root);
-    }
-
-    public com.codename1.ui.Button findButton() {
-        com.codename1.ui.Button cmp = (com.codename1.ui.Button)findByName("Button", Display.getInstance().getCurrent());
-        if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.Button)findByName("Button", aboutToShowThisContainer);
-        }
-        return cmp;
-    }
-
-    public com.codename1.ui.Label findLabel1(Component root) {
-        return (com.codename1.ui.Label)findByName("Label1", root);
-    }
-
-    public com.codename1.ui.Label findLabel1() {
-        com.codename1.ui.Label cmp = (com.codename1.ui.Label)findByName("Label1", Display.getInstance().getCurrent());
-        if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.Label)findByName("Label1", aboutToShowThisContainer);
-        }
-        return cmp;
-    }
-
-    public com.codename1.ui.Button findEncounterButton(Component root) {
-        return (com.codename1.ui.Button)findByName("encounterButton", root);
-    }
-
-    public com.codename1.ui.Button findEncounterButton() {
-        com.codename1.ui.Button cmp = (com.codename1.ui.Button)findByName("encounterButton", Display.getInstance().getCurrent());
-        if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.Button)findByName("encounterButton", aboutToShowThisContainer);
-        }
-        return cmp;
-    }
-
-    public com.codename1.ui.Button findCustomButton(Component root) {
-        return (com.codename1.ui.Button)findByName("customButton", root);
-    }
-
-    public com.codename1.ui.Button findCustomButton() {
-        com.codename1.ui.Button cmp = (com.codename1.ui.Button)findByName("customButton", Display.getInstance().getCurrent());
-        if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.Button)findByName("customButton", aboutToShowThisContainer);
-        }
-        return cmp;
-    }
-
-    public com.codename1.ui.Container findContainer(Component root) {
-        return (com.codename1.ui.Container)findByName("Container", root);
-    }
-
-    public com.codename1.ui.Container findContainer() {
-        com.codename1.ui.Container cmp = (com.codename1.ui.Container)findByName("Container", Display.getInstance().getCurrent());
-        if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.Container)findByName("Container", aboutToShowThisContainer);
-        }
-        return cmp;
-    }
-
-    public com.codename1.ui.Button findPhoneIcon(Component root) {
-        return (com.codename1.ui.Button)findByName("phoneIcon", root);
-    }
-
-    public com.codename1.ui.Button findPhoneIcon() {
-        com.codename1.ui.Button cmp = (com.codename1.ui.Button)findByName("phoneIcon", Display.getInstance().getCurrent());
-        if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.Button)findByName("phoneIcon", aboutToShowThisContainer);
-        }
-        return cmp;
-    }
-
-    public com.codename1.ui.Button findAnniversaryButton(Component root) {
-        return (com.codename1.ui.Button)findByName("anniversaryButton", root);
-    }
-
-    public com.codename1.ui.Button findAnniversaryButton() {
-        com.codename1.ui.Button cmp = (com.codename1.ui.Button)findByName("anniversaryButton", Display.getInstance().getCurrent());
-        if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.Button)findByName("anniversaryButton", aboutToShowThisContainer);
         }
         return cmp;
     }
@@ -323,6 +226,30 @@ public abstract class StateMachineBase extends UIBuilder {
         return cmp;
     }
 
+    public com.codename1.ui.Container findContainer5(Component root) {
+        return (com.codename1.ui.Container)findByName("Container5", root);
+    }
+
+    public com.codename1.ui.Container findContainer5() {
+        com.codename1.ui.Container cmp = (com.codename1.ui.Container)findByName("Container5", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.Container)findByName("Container5", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.components.MultiButton findContactMultiButton(Component root) {
+        return (com.codename1.components.MultiButton)findByName("contactMultiButton", root);
+    }
+
+    public com.codename1.components.MultiButton findContactMultiButton() {
+        com.codename1.components.MultiButton cmp = (com.codename1.components.MultiButton)findByName("contactMultiButton", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.components.MultiButton)findByName("contactMultiButton", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
     public com.codename1.ui.list.MultiList findStoredContactsMultiList(Component root) {
         return (com.codename1.ui.list.MultiList)findByName("storedContactsMultiList", root);
     }
@@ -347,26 +274,38 @@ public abstract class StateMachineBase extends UIBuilder {
         return cmp;
     }
 
-    public com.codename1.ui.TextField findTextField(Component root) {
-        return (com.codename1.ui.TextField)findByName("TextField", root);
+    public com.codename1.ui.Container findContactsRenderer(Component root) {
+        return (com.codename1.ui.Container)findByName("ContactsRenderer", root);
     }
 
-    public com.codename1.ui.TextField findTextField() {
-        com.codename1.ui.TextField cmp = (com.codename1.ui.TextField)findByName("TextField", Display.getInstance().getCurrent());
+    public com.codename1.ui.Container findContactsRenderer() {
+        com.codename1.ui.Container cmp = (com.codename1.ui.Container)findByName("ContactsRenderer", Display.getInstance().getCurrent());
         if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.TextField)findByName("TextField", aboutToShowThisContainer);
+            cmp = (com.codename1.ui.Container)findByName("ContactsRenderer", aboutToShowThisContainer);
         }
         return cmp;
     }
 
-    public com.codename1.ui.Label findLabel(Component root) {
-        return (com.codename1.ui.Label)findByName("Label", root);
+    public com.codename1.ui.Button findButton(Component root) {
+        return (com.codename1.ui.Button)findByName("Button", root);
     }
 
-    public com.codename1.ui.Label findLabel() {
-        com.codename1.ui.Label cmp = (com.codename1.ui.Label)findByName("Label", Display.getInstance().getCurrent());
+    public com.codename1.ui.Button findButton() {
+        com.codename1.ui.Button cmp = (com.codename1.ui.Button)findByName("Button", Display.getInstance().getCurrent());
         if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.Label)findByName("Label", aboutToShowThisContainer);
+            cmp = (com.codename1.ui.Button)findByName("Button", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.Label findLabel1(Component root) {
+        return (com.codename1.ui.Label)findByName("Label1", root);
+    }
+
+    public com.codename1.ui.Label findLabel1() {
+        com.codename1.ui.Label cmp = (com.codename1.ui.Label)findByName("Label1", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.Label)findByName("Label1", aboutToShowThisContainer);
         }
         return cmp;
     }
@@ -383,15 +322,57 @@ public abstract class StateMachineBase extends UIBuilder {
         return cmp;
     }
 
-    protected void exitForm(Form f) {
-        if("EachContact".equals(f.getName())) {
-            exitEachContact(f);
-            aboutToShowThisContainer = null;
-            return;
-        }
+    public com.codename1.ui.Label findLabel(Component root) {
+        return (com.codename1.ui.Label)findByName("Label", root);
+    }
 
-        if("EventsToday".equals(f.getName())) {
-            exitEventsToday(f);
+    public com.codename1.ui.Label findLabel() {
+        com.codename1.ui.Label cmp = (com.codename1.ui.Label)findByName("Label", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.Label)findByName("Label", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.Button findEncounterButton(Component root) {
+        return (com.codename1.ui.Button)findByName("encounterButton", root);
+    }
+
+    public com.codename1.ui.Button findEncounterButton() {
+        com.codename1.ui.Button cmp = (com.codename1.ui.Button)findByName("encounterButton", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.Button)findByName("encounterButton", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.Button findCustomButton(Component root) {
+        return (com.codename1.ui.Button)findByName("customButton", root);
+    }
+
+    public com.codename1.ui.Button findCustomButton() {
+        com.codename1.ui.Button cmp = (com.codename1.ui.Button)findByName("customButton", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.Button)findByName("customButton", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.Container findContainer(Component root) {
+        return (com.codename1.ui.Container)findByName("Container", root);
+    }
+
+    public com.codename1.ui.Container findContainer() {
+        com.codename1.ui.Container cmp = (com.codename1.ui.Container)findByName("Container", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.Container)findByName("Container", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    protected void exitForm(Form f) {
+        if("Main".equals(f.getName())) {
+            exitMain(f);
             aboutToShowThisContainer = null;
             return;
         }
@@ -402,14 +383,14 @@ public abstract class StateMachineBase extends UIBuilder {
             return;
         }
 
-        if("SplashScreen".equals(f.getName())) {
-            exitSplashScreen(f);
+        if("EachContact".equals(f.getName())) {
+            exitEachContact(f);
             aboutToShowThisContainer = null;
             return;
         }
 
-        if("Main".equals(f.getName())) {
-            exitMain(f);
+        if("SplashScreen".equals(f.getName())) {
+            exitSplashScreen(f);
             aboutToShowThisContainer = null;
             return;
         }
@@ -420,14 +401,11 @@ public abstract class StateMachineBase extends UIBuilder {
             return;
         }
 
+            return;
     }
 
 
-    protected void exitEachContact(Form f) {
-    }
-
-
-    protected void exitEventsToday(Form f) {
+    protected void exitMain(Form f) {
     }
 
 
@@ -435,11 +413,11 @@ public abstract class StateMachineBase extends UIBuilder {
     }
 
 
-    protected void exitSplashScreen(Form f) {
+    protected void exitEachContact(Form f) {
     }
 
 
-    protected void exitMain(Form f) {
+    protected void exitSplashScreen(Form f) {
     }
 
 
@@ -448,14 +426,8 @@ public abstract class StateMachineBase extends UIBuilder {
 
     protected void beforeShow(Form f) {
     aboutToShowThisContainer = f;
-        if("EachContact".equals(f.getName())) {
-            beforeEachContact(f);
-            aboutToShowThisContainer = null;
-            return;
-        }
-
-        if("EventsToday".equals(f.getName())) {
-            beforeEventsToday(f);
+        if("Main".equals(f.getName())) {
+            beforeMain(f);
             aboutToShowThisContainer = null;
             return;
         }
@@ -466,14 +438,14 @@ public abstract class StateMachineBase extends UIBuilder {
             return;
         }
 
-        if("SplashScreen".equals(f.getName())) {
-            beforeSplashScreen(f);
+        if("EachContact".equals(f.getName())) {
+            beforeEachContact(f);
             aboutToShowThisContainer = null;
             return;
         }
 
-        if("Main".equals(f.getName())) {
-            beforeMain(f);
+        if("SplashScreen".equals(f.getName())) {
+            beforeSplashScreen(f);
             aboutToShowThisContainer = null;
             return;
         }
@@ -484,22 +456,7 @@ public abstract class StateMachineBase extends UIBuilder {
             return;
         }
 
-    }
-
-
-    protected void beforeEachContact(Form f) {
-    }
-
-
-    protected void beforeEventsToday(Form f) {
-    }
-
-
-    protected void beforeSelectedContacts(Form f) {
-    }
-
-
-    protected void beforeSplashScreen(Form f) {
+            return;
     }
 
 
@@ -507,19 +464,25 @@ public abstract class StateMachineBase extends UIBuilder {
     }
 
 
+    protected void beforeSelectedContacts(Form f) {
+    }
+
+
+    protected void beforeEachContact(Form f) {
+    }
+
+
+    protected void beforeSplashScreen(Form f) {
+    }
+
+
     protected void beforeContactsRenderer(Form f) {
     }
 
     protected void beforeShowContainer(Container c) {
-    aboutToShowThisContainer = c;
-        if("EachContact".equals(c.getName())) {
-            beforeContainerEachContact(c);
-            aboutToShowThisContainer = null;
-            return;
-        }
-
-        if("EventsToday".equals(c.getName())) {
-            beforeContainerEventsToday(c);
+        aboutToShowThisContainer = c;
+        if("Main".equals(c.getName())) {
+            beforeContainerMain(c);
             aboutToShowThisContainer = null;
             return;
         }
@@ -530,14 +493,14 @@ public abstract class StateMachineBase extends UIBuilder {
             return;
         }
 
-        if("SplashScreen".equals(c.getName())) {
-            beforeContainerSplashScreen(c);
+        if("EachContact".equals(c.getName())) {
+            beforeContainerEachContact(c);
             aboutToShowThisContainer = null;
             return;
         }
 
-        if("Main".equals(c.getName())) {
-            beforeContainerMain(c);
+        if("SplashScreen".equals(c.getName())) {
+            beforeContainerSplashScreen(c);
             aboutToShowThisContainer = null;
             return;
         }
@@ -548,22 +511,7 @@ public abstract class StateMachineBase extends UIBuilder {
             return;
         }
 
-    }
-
-
-    protected void beforeContainerEachContact(Container c) {
-    }
-
-
-    protected void beforeContainerEventsToday(Container c) {
-    }
-
-
-    protected void beforeContainerSelectedContacts(Container c) {
-    }
-
-
-    protected void beforeContainerSplashScreen(Container c) {
+            return;
     }
 
 
@@ -571,18 +519,24 @@ public abstract class StateMachineBase extends UIBuilder {
     }
 
 
+    protected void beforeContainerSelectedContacts(Container c) {
+    }
+
+
+    protected void beforeContainerEachContact(Container c) {
+    }
+
+
+    protected void beforeContainerSplashScreen(Container c) {
+    }
+
+
     protected void beforeContainerContactsRenderer(Container c) {
     }
 
     protected void postShow(Form f) {
-        if("EachContact".equals(f.getName())) {
-            postEachContact(f);
-            aboutToShowThisContainer = null;
-            return;
-        }
-
-        if("EventsToday".equals(f.getName())) {
-            postEventsToday(f);
+        if("Main".equals(f.getName())) {
+            postMain(f);
             aboutToShowThisContainer = null;
             return;
         }
@@ -593,14 +547,14 @@ public abstract class StateMachineBase extends UIBuilder {
             return;
         }
 
-        if("SplashScreen".equals(f.getName())) {
-            postSplashScreen(f);
+        if("EachContact".equals(f.getName())) {
+            postEachContact(f);
             aboutToShowThisContainer = null;
             return;
         }
 
-        if("Main".equals(f.getName())) {
-            postMain(f);
+        if("SplashScreen".equals(f.getName())) {
+            postSplashScreen(f);
             aboutToShowThisContainer = null;
             return;
         }
@@ -611,22 +565,7 @@ public abstract class StateMachineBase extends UIBuilder {
             return;
         }
 
-    }
-
-
-    protected void postEachContact(Form f) {
-    }
-
-
-    protected void postEventsToday(Form f) {
-    }
-
-
-    protected void postSelectedContacts(Form f) {
-    }
-
-
-    protected void postSplashScreen(Form f) {
+            return;
     }
 
 
@@ -634,18 +573,24 @@ public abstract class StateMachineBase extends UIBuilder {
     }
 
 
+    protected void postSelectedContacts(Form f) {
+    }
+
+
+    protected void postEachContact(Form f) {
+    }
+
+
+    protected void postSplashScreen(Form f) {
+    }
+
+
     protected void postContactsRenderer(Form f) {
     }
 
     protected void postShowContainer(Container c) {
-        if("EachContact".equals(c.getName())) {
-            postContainerEachContact(c);
-            aboutToShowThisContainer = null;
-            return;
-        }
-
-        if("EventsToday".equals(c.getName())) {
-            postContainerEventsToday(c);
+        if("Main".equals(c.getName())) {
+            postContainerMain(c);
             aboutToShowThisContainer = null;
             return;
         }
@@ -656,14 +601,14 @@ public abstract class StateMachineBase extends UIBuilder {
             return;
         }
 
-        if("SplashScreen".equals(c.getName())) {
-            postContainerSplashScreen(c);
+        if("EachContact".equals(c.getName())) {
+            postContainerEachContact(c);
             aboutToShowThisContainer = null;
             return;
         }
 
-        if("Main".equals(c.getName())) {
-            postContainerMain(c);
+        if("SplashScreen".equals(c.getName())) {
+            postContainerSplashScreen(c);
             aboutToShowThisContainer = null;
             return;
         }
@@ -674,22 +619,7 @@ public abstract class StateMachineBase extends UIBuilder {
             return;
         }
 
-    }
-
-
-    protected void postContainerEachContact(Container c) {
-    }
-
-
-    protected void postContainerEventsToday(Container c) {
-    }
-
-
-    protected void postContainerSelectedContacts(Container c) {
-    }
-
-
-    protected void postContainerSplashScreen(Container c) {
+            return;
     }
 
 
@@ -697,18 +627,24 @@ public abstract class StateMachineBase extends UIBuilder {
     }
 
 
+    protected void postContainerSelectedContacts(Container c) {
+    }
+
+
+    protected void postContainerEachContact(Container c) {
+    }
+
+
+    protected void postContainerSplashScreen(Container c) {
+    }
+
+
     protected void postContainerContactsRenderer(Container c) {
     }
 
     protected void onCreateRoot(String rootName) {
-        if("EachContact".equals(rootName)) {
-            onCreateEachContact();
-            aboutToShowThisContainer = null;
-            return;
-        }
-
-        if("EventsToday".equals(rootName)) {
-            onCreateEventsToday();
+        if("Main".equals(rootName)) {
+            onCreateMain();
             aboutToShowThisContainer = null;
             return;
         }
@@ -719,14 +655,14 @@ public abstract class StateMachineBase extends UIBuilder {
             return;
         }
 
-        if("SplashScreen".equals(rootName)) {
-            onCreateSplashScreen();
+        if("EachContact".equals(rootName)) {
+            onCreateEachContact();
             aboutToShowThisContainer = null;
             return;
         }
 
-        if("Main".equals(rootName)) {
-            onCreateMain();
+        if("SplashScreen".equals(rootName)) {
+            onCreateSplashScreen();
             aboutToShowThisContainer = null;
             return;
         }
@@ -737,22 +673,7 @@ public abstract class StateMachineBase extends UIBuilder {
             return;
         }
 
-    }
-
-
-    protected void onCreateEachContact() {
-    }
-
-
-    protected void onCreateEventsToday() {
-    }
-
-
-    protected void onCreateSelectedContacts() {
-    }
-
-
-    protected void onCreateSplashScreen() {
+            return;
     }
 
 
@@ -760,7 +681,129 @@ public abstract class StateMachineBase extends UIBuilder {
     }
 
 
+    protected void onCreateSelectedContacts() {
+    }
+
+
+    protected void onCreateEachContact() {
+    }
+
+
+    protected void onCreateSplashScreen() {
+    }
+
+
     protected void onCreateContactsRenderer() {
+    }
+
+    protected Hashtable getFormState(Form f) {
+        Hashtable h = super.getFormState(f);
+        if("Main".equals(f.getName())) {
+            getStateMain(f, h);
+            aboutToShowThisContainer = null;
+            return h;
+        }
+
+        if("SelectedContacts".equals(f.getName())) {
+            getStateSelectedContacts(f, h);
+            aboutToShowThisContainer = null;
+            return h;
+        }
+
+        if("EachContact".equals(f.getName())) {
+            getStateEachContact(f, h);
+            aboutToShowThisContainer = null;
+            return h;
+        }
+
+        if("SplashScreen".equals(f.getName())) {
+            getStateSplashScreen(f, h);
+            aboutToShowThisContainer = null;
+            return h;
+        }
+
+        if("ContactsRenderer".equals(f.getName())) {
+            getStateContactsRenderer(f, h);
+            aboutToShowThisContainer = null;
+            return h;
+        }
+
+            return h;
+    }
+
+
+    protected void getStateMain(Form f, Hashtable h) {
+    }
+
+
+    protected void getStateSelectedContacts(Form f, Hashtable h) {
+    }
+
+
+    protected void getStateEachContact(Form f, Hashtable h) {
+    }
+
+
+    protected void getStateSplashScreen(Form f, Hashtable h) {
+    }
+
+
+    protected void getStateContactsRenderer(Form f, Hashtable h) {
+    }
+
+    protected void setFormState(Form f, Hashtable state) {
+        super.setFormState(f, state);
+        if("Main".equals(f.getName())) {
+            setStateMain(f, state);
+            aboutToShowThisContainer = null;
+            return;
+        }
+
+        if("SelectedContacts".equals(f.getName())) {
+            setStateSelectedContacts(f, state);
+            aboutToShowThisContainer = null;
+            return;
+        }
+
+        if("EachContact".equals(f.getName())) {
+            setStateEachContact(f, state);
+            aboutToShowThisContainer = null;
+            return;
+        }
+
+        if("SplashScreen".equals(f.getName())) {
+            setStateSplashScreen(f, state);
+            aboutToShowThisContainer = null;
+            return;
+        }
+
+        if("ContactsRenderer".equals(f.getName())) {
+            setStateContactsRenderer(f, state);
+            aboutToShowThisContainer = null;
+            return;
+        }
+
+            return;
+    }
+
+
+    protected void setStateMain(Form f, Hashtable state) {
+    }
+
+
+    protected void setStateSelectedContacts(Form f, Hashtable state) {
+    }
+
+
+    protected void setStateEachContact(Form f, Hashtable state) {
+    }
+
+
+    protected void setStateSplashScreen(Form f, Hashtable state) {
+    }
+
+
+    protected void setStateContactsRenderer(Form f, Hashtable state) {
     }
 
     protected boolean setListModel(List cmp) {
@@ -791,6 +834,18 @@ public abstract class StateMachineBase extends UIBuilder {
             c = c.getParent().getLeadParent();
         }
         if(rootContainerName == null) return;
+        if(rootContainerName.equals("Main")) {
+            if("MultiList".equals(c.getName())) {
+                onMain_MultiListAction(c, event);
+                return;
+            }
+        }
+        if(rootContainerName.equals("SelectedContacts")) {
+            if("storedContactsMultiList".equals(c.getName())) {
+                onSelectedContacts_StoredContactsMultiListAction(c, event);
+                return;
+            }
+        }
         if(rootContainerName.equals("EachContact")) {
             if("phoneIcon".equals(c.getName())) {
                 onEachContact_PhoneIconAction(c, event);
@@ -812,26 +867,8 @@ public abstract class StateMachineBase extends UIBuilder {
                 onEachContact_CustomButtonAction(c, event);
                 return;
             }
-        }
-        if(rootContainerName.equals("EventsToday")) {
-            if("TextField".equals(c.getName())) {
-                onEventsToday_TextFieldAction(c, event);
-                return;
-            }
             if("Button".equals(c.getName())) {
-                onEventsToday_ButtonAction(c, event);
-                return;
-            }
-        }
-        if(rootContainerName.equals("SelectedContacts")) {
-            if("storedContactsMultiList".equals(c.getName())) {
-                onSelectedContacts_StoredContactsMultiListAction(c, event);
-                return;
-            }
-        }
-        if(rootContainerName.equals("Main")) {
-            if("MultiList".equals(c.getName())) {
-                onMain_MultiListAction(c, event);
+                onEachContact_ButtonAction(c, event);
                 return;
             }
         }
@@ -842,6 +879,12 @@ public abstract class StateMachineBase extends UIBuilder {
             }
         }
     }
+
+      protected void onMain_MultiListAction(Component c, ActionEvent event) {
+      }
+
+      protected void onSelectedContacts_StoredContactsMultiListAction(Component c, ActionEvent event) {
+      }
 
       protected void onEachContact_PhoneIconAction(Component c, ActionEvent event) {
       }
@@ -858,16 +901,7 @@ public abstract class StateMachineBase extends UIBuilder {
       protected void onEachContact_CustomButtonAction(Component c, ActionEvent event) {
       }
 
-      protected void onEventsToday_TextFieldAction(Component c, ActionEvent event) {
-      }
-
-      protected void onEventsToday_ButtonAction(Component c, ActionEvent event) {
-      }
-
-      protected void onSelectedContacts_StoredContactsMultiListAction(Component c, ActionEvent event) {
-      }
-
-      protected void onMain_MultiListAction(Component c, ActionEvent event) {
+      protected void onEachContact_ButtonAction(Component c, ActionEvent event) {
       }
 
       protected void onContactsRenderer_ContactMultiButtonAction(Component c, ActionEvent event) {

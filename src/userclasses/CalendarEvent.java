@@ -10,5 +10,7 @@ import com.codename1.system.NativeInterface;
  * @author LANREWAJU
  */
 public interface CalendarEvent extends NativeInterface{
-    public String executeCalendar();
+    public void executeCalendar();
+    public String setMyReminder(int yearInt, int monthInt, int dayInt, String comment, String title);
+    public boolean isSupported();
 }
